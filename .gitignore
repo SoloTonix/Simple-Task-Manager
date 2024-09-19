@@ -1,0 +1,11 @@
+# created by virtualenv automatically
+*
+data/__pycache__
+data/migrations 
+data/__init__.py
+users/__pycache__
+users/migrations 
+users/__init__.py
+db.sqlite3
+TODO/manage.py 
+pyvenv.cfg

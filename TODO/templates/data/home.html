@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="">
+        <div class="light-rounded p-5 mb-4">
+            <div class="container-fluid py-4 bg-white border border-radius">
+                <h3 class="display-5 fw-bold px-4">Plan Your Day</h3>
+                <p class="col-md-8 fw-4 px-3">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                     Reiciendis maiores quas nulla, rem voluptatum aperiam expedita maxime eum deserunt 
+                    quo labore blanditiis quod minima aliquid quaerat molestias amet dolore aut.
+                </p>
+                <a href="{% url 'create-task' %}" class="btn btn-primary px-5 mx-3">WRITE</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        {% for task in tasks %}
+        <div class="row">
+            <div class="col-md-8">
+                <h4>{{ task.title }}</h4>
+            </div>
+            <div class="col-md-2 mt-2">
+                <small>{{ task.created }}</small>
+            </div>
+            <div class="col-md-1">
+                <a href="{% url 'delete-task' task.pk %}" class="btn btn-outline-danger" style="text-decoration: none; ">delete</a>
+            </div>
+            <div class="col-md-1">
+                <a href="{% url 'update-task' task.pk %}" class="btn btn-outline-success" style="text-decoration: none; ">update</a>
+            </div>
+        </div>
+        <hr class="mb-3">
+        {% endfor %}
+    </div>
+
+
+{% endblock %}
